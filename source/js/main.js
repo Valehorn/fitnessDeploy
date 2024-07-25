@@ -6,6 +6,10 @@ import { faqAccordionToggle } from './accordion';
 import { changePriceTab } from './price-tab';
 import { cardHover } from './card-hover';
 import './validate-form';
+import '../sass/global/fonts.scss';
+import '../sass/style.scss';
+import '../sass/vendor/swiper.scss';
+
 
 const bootStrap = () => {
   openVideo();
