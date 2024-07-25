@@ -65,6 +65,10 @@
   height: 300px;
 }
 
+.juri__image--mode {
+  object-fit: cover;
+}
+
 .juri__sub-card {
   display: flex;
   flex-direction: column;
