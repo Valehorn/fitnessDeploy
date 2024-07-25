@@ -1,0 +1,34 @@
+/* Global */
+@import "global/variables";
+@import "global/fonts";
+@import "global/container";
+@import "global/visually-hidden";
+@import "global/global";
+@import "global/button";
+@import "global/title";
+
+/* Блоки */
+@import "blocks/page-main";
+@import "blocks/details-link";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/hero";
+@import "blocks/about";
+@import "blocks/price";
+@import "blocks/card";
+@import "blocks/games";
+@import "blocks/juri";
+@import "blocks/features";
+@import "blocks/offers";
+@import "blocks/faq";
+@import "blocks/reviews";
+@import "blocks/form-contacts-gradient";
+@import "blocks/form-contacts-desktop-wrapper";
+@import "blocks/form";
+@import "blocks/contacts";
+@import "blocks/footer";
+@import "blocks/social-list";
+
+/* Vendor */
+@import "vendor/normalize";
+@import "vendor/swiper";

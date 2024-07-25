@@ -1,0 +1,11 @@
+@use "../global/variables.scss";
+
+.form-contacts-desktop-wrapper {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: $desktop-width-container;
+    max-width: $desktop-width-container;
+    margin: 0 auto;
+  }
+}

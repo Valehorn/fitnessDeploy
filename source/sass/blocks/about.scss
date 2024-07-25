@@ -1,0 +1,342 @@
+@use "../global/variables.scss";
+
+.about {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  p {
+    margin: 0;
+  }
+
+  p:last-of-type {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 120px;
+
+    p:first-of-type {
+      width: 502px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+    padding-top: 120px;
+    padding-bottom: 240px;
+
+    p:first-of-type,
+    p:last-of-type {
+      width: 355px;
+    }
+
+    p:first-of-type {
+      margin-bottom: 10px;
+    }
+
+    p:last-of-type {
+      display: block;
+    }
+  }
+}
+
+.about__container {
+  @media (min-width: $desktop-width) {
+    display: flex;
+    gap: 0 145px;
+  }
+}
+
+.about__text-container {
+  margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-items: flex-start;
+    width: 355px;
+    margin-bottom: 0;
+  }
+}
+
+.about__title {
+  margin-bottom: 12px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 25px;
+  }
+}
+
+.about__subtitle {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 95px;
+  }
+}
+
+// Контейнер для более корректного переполнения на десктопе.
+
+.about__image-video-container {
+  display: contents;
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+    display: block;
+  }
+}
+
+.about__image-container {
+  margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.about__image {
+  display: block;
+}
+
+.about__video-container {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-width: $desktop-width) {
+    bottom: auto;
+    left: 80px;
+  }
+
+  @media (max-width: $pre-tablet-width) {
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.about__video-plug {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 320px;
+    height: 170px;
+    background-color: rgba(20, 54, 122, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    &::after {
+      width: 270px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &::after {
+      width: 360px;
+      height: 230px;
+    }
+  }
+}
+
+.about__video-image {
+  display: block;
+  width: 320px;
+  height: 170px;
+
+  @media (min-width: $tablet-width) {
+    width: 270px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 360px;
+    height: 230px;
+  }
+}
+
+.about__button-play-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.about__button-play {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  background-image: linear-gradient(97.05deg, #ed0233 17.6%, #003eb7 95.31%);
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.5s ease, width 0.5s ease, height 0.5s ease;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 12px;
+    height: 12px;
+    mask-image: url("/__spritemap#sprite-play-view");
+    mask-size: 12px 12px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $primary-white-color;
+    transition: background-color 0.5s ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(237, 2, 51, 0.3);
+    transition: border 0.5s ease;
+  }
+
+  &:hover {
+    background-image: none;
+    background-color: $primary-white-color;
+
+    &::before {
+      background-color: rgba(16, 38, 84, 0.6);
+    }
+
+    &::after {
+      border: 2px solid rgba(16, 38, 84, 0.6);
+    }
+  }
+
+  &:focus-visible {
+    background-image: none;
+    background-color: #c8c9cc;
+    outline: 1px solid transparent;
+
+    &::before {
+      background-color: $primary-dark-color;
+    }
+
+    &::after {
+      border: 2px solid $primary-dark-color;
+    }
+  }
+
+  &:active {
+    background-image: none;
+    background-color: $primary-white-color;
+    width: 44px;
+    height: 44px;
+
+    &::before {
+      background-color: $primary-dark-color;
+    }
+
+    &::after {
+      border: 2px solid $primary-dark-color;
+    }
+  }
+
+  &:disabled {
+    background-image: none;
+    background-color: $primary-white-color;
+    opacity: 0.4;
+    pointer-events: none;
+
+    &::before {
+      background-color: $primary-dark-color;
+    }
+
+    &::after {
+      border: 2px solid $primary-dark-color;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 72px;
+    height: 72px;
+
+    &::before {
+      width: 17px;
+      height: 17px;
+      mask-size: 17px 17px;
+    }
+
+    &::after {
+      width: 100px;
+      height: 100px;
+    }
+
+    &:active {
+      width: 58px;
+      height: 58px;
+    }
+  }
+}
+
+// Класс disable на случай, если about__button-play является ссылкой(неработающий js).
+
+.about__button-play--disabled {
+  background-image: none;
+  background-color: $primary-white-color;
+  opacity: 0.4;
+  cursor: none;
+  pointer-events: none;
+
+  &::before {
+    background-color: $primary-dark-color;
+  }
+
+  &::after {
+    border: 2px solid $primary-dark-color;
+  }
+}
+
+.about__video {
+  border: 1px solid transparent;
+
+  @media (min-width: $tablet-width) {
+    width: 270px;
+    height: 170px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 360px;
+    height: 230px;
+  }
+}
