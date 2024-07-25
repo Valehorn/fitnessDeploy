@@ -6,7 +6,11 @@
   padding-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    background-image: image-set(url("../img/price/price-tablet@1x.webp") type("img/webp") 1x, url("../img/price/price-tablet@2x.webp") type("img/webp") 2x, url("../img/price/price-tablet@1x.png") type("img/png") 1x, url("../img/price/price-tablet@2x.png") type("img/png") 2x);
+    background-image:
+      image-set(url("/img/price/price-tablet@1x.webp") type("img/webp") 1x,
+      url("/img/price/price-tablet@2x.webp") type("img/webp") 2x,
+      url("/img/price/price-tablet@1x.png") type("img/png") 1x,
+      url("/img/price/price-tablet@2x.png") type("img/png") 2x);
     background-repeat: no-repeat;
     background-size: 325px 388px;
     background-position: 100% 100%;
@@ -15,7 +19,11 @@
   }
 
   @media (min-width: $desktop-width) {
-    background-image: image-set(url("../img/price/price-desktop@1x.webp") type("img/webp") 1x, url("../img/price/price-desktop@2x.webp") type("img/webp") 2x, url("../img/price/price-desktop@1x.png") type("img/png") 1x, url("../img/price/price-desktop@2x.png") type("img/png") 2x);
+    background-image:
+      image-set(url("/img/price/price-desktop@1x.webp") type("img/webp") 1x,
+      url("/img/price/price-desktop@2x.webp") type("img/webp") 2x,
+      url("/img/price/price-desktop@1x.png") type("img/png") 1x,
+      url("/img/price/price-desktop@2x.png") type("img/png") 2x);
     background-repeat: no-repeat;
     background-size: 303px 448px;
     background-position: bottom right;
